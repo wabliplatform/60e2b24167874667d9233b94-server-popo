@@ -132,17 +132,30 @@ components:
   schemas:
     product:
       example:
-        pimage: pimage
+        pimage:
+          data: data
+          name: name
         ptitle: ptitle
         _id: _id
       properties:
         _id:
           type: string
         pimage:
-          type: string
+          $ref: '#/components/schemas/product_pimage'
         ptitle:
           type: string
       required:
       - pimage
       - ptitle
       type: object
+    product_pimage:
+      example:
+        data: data
+        name: name
+      properties:
+        data:
+          type: string
+        name:
+          type: string
+      type: object
+      x-isSchemaOnly: "true"
