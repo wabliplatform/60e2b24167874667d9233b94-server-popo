@@ -127,6 +127,16 @@ paths:
       tags:
       - product
       x-method-getAll: "true"
+      x-custom-code: |
+        /** This is a comment template
+          * @param {string} paramName
+          * @return {Array} [Product]
+          */
+        export function pregetAllproduct(param) {
+          // insert code here
+          Product.sort();
+        }
+      x-custom-code-prefix: pre
       x-eov-operation-handler: controllers/ProductController
 components:
   schemas:

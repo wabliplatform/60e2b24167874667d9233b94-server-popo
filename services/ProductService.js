@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 const Service = require('./Service');
 const { Product } = require('../models/Product');
+const { pregetAllproduct } = require('../helperFunction');
 
 /**
 * Creates the data
@@ -52,6 +53,7 @@ const getAllproduct = () => new Promise(
     try {
       let query = {}
       query = await Product.find().exec();
+      query = pregetAllproduct(query);
       // this is a test
       resolve(Service.successResponse(query));
     } catch (e) {
